@@ -1,5 +1,3 @@
-import textile
-
 from django import template
 from django.utils.encoding import smart_str, force_unicode
 from django.utils.safestring import mark_safe
@@ -26,6 +24,6 @@ def render_fragment(id):
         return ''
     try: 
         fragment = Fragment.objects.get(pk=id)
-        return mark_safe(force_unicode(textile.textile(smart_str(fragment.content), encoding='utf-8', output='utf-8')))    
+        return mark_safe(force_unicode(smart_str(fragment.html)))
     except ObjectDoesNotExist:
         return ''

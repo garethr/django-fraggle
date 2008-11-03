@@ -1,5 +1,5 @@
 from django.db import models
-from django. contrib.markup.templatetags.markup import textile
+from django.contrib.markup.templatetags.markup import textile
  
 class Fragment(models.Model):
     """
